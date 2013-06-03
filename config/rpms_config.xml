@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE rpms_config PUBLIC "-//RPMS//Server Configuration//EN" "rpms_config.dtd" >
+<rpms_config>
+    <!-- List of all the allowed nodes in the system -->
+    <registered_nodes>
+        <node hostname="pgdsX00" type="linux" rank="3" usable="1"/>
+        <node hostname="pgdsX01" type="linux" rank="2" usable="1"/>
+        <node hostname="pgdsX02" type="linux" rank="1" usable="1"/>
+        <node hostname="pgdsX03" type="linux" rank="7" usable="1"/>
+    </registered_nodes>
+    <!-- List all the applications that the system should run -->
+    <system_components>
+
+        <!-- components and their details -->
+        <components>
+        <!--
+            <component name="stdouttest" args="-g" runnable="1" moveable="1" loggingname="stdouttest" stdout="file" stderr="off">
+                <instances>1</instances>
+            </component>
+            
+            -->
+            <component name="testapp1" args="-play" runnable="1" moveable="1" loggingname="testapp1" stdout="file" stderr="off">
+                <instances>3</instances>
+            </component>
+            <!--
+            <component name="testapp2" args="-h" runnable="1" moveable="1" loggingname="testapp2" stdout="file" stderr="off"/>
+            <component name="test2.ksh" args="-h" runnable="1" moveable="0" loggingname="test_2" stdout="file" stderr="off"/>
+            <component name="test3.ksh" args="-u" runnable="1" moveable="1" loggingname="test_3" stdout="file" stderr="off">
+                <instances>3</instances>
+                <retry_max>5</retry_max>
+            </component>
+            <component name="test4.ksh" args="-f" runnable="1" moveable="1" loggingname="test_4" stdout="file" stderr="off">
+                <instances>2</instances>
+                <retry_window>5000000</retry_window>
+            </component>
+            <component name="test5.ksh" args="-d" runnable="0" moveable="1" loggingname="test_5" stdout="file" stderr="off">
+                <run_type>once</run_type>
+            </component>
+            -->
+        </components>
+
+        <!-- default values for all components (unless overridden in <components>) -->
+        <component_defaults>
+            <instances>1</instances>
+            <retry_max>3</retry_max>
+            <retry_window>1000000</retry_window>
+            <run_type>continuous</run_type>
+        </component_defaults>
+
+    </system_components>
+</rpms_config>
