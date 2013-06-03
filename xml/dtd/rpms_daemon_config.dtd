@@ -1,0 +1,15 @@
+<!-- DYD for DOCTYPE rpms_daemon_config -->
+<!ELEMENT rpms_daemon_config (process_config*) >
+    <!ELEMENT process_config (#PCDATA) >
+    <!ATTLIST process_config
+        args CDATA #REQUIRED
+        compinstance CDATA #REQUIRED
+        compname CDATA #REQUIRED
+        loggingname CDATA #REQUIRED
+        moveable (0 | 1) #REQUIRED
+        retrymax CDATA #REQUIRED
+        retrywindow CDATA #REQUIRED
+        runnable (0 | 1) #REQUIRED
+        runtype (continuous | once ) #REQUIRED
+        stderr (off | file | out) #REQUIRED
+        stdout (off | file | out) #REQUIRED >

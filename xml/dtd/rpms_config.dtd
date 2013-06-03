@@ -1,0 +1,30 @@
+<!-- DTD for DOCTYPE rpms_config -->
+<!ELEMENT rpms_config (registered_nodes, system_components) >
+
+    <!ELEMENT registered_nodes (node+)>
+
+        <!ELEMENT node (#PCDATA) >
+        <!ATTLIST node
+            hostname    CDATA   #REQUIRED
+            type        (linux | unix | win32) "linux"
+            rank        CDATA   #REQUIRED 
+            usable      (1 | 0) "1" >
+
+    <!ELEMENT system_components (components, component_defaults) >
+
+        <!ELEMENT components (component*) >
+            <!ELEMENT component (instances?,retry_max?,retry_window?,run_type?) >
+            <!ATTLIST component
+                name            CDATA #REQUIRED
+                args            CDATA #IMPLIED
+                runnable        (0 | 1) #REQUIRED
+                moveable        (0 | 1) #REQUIRED
+                loggingname     CDATA #IMPLIED
+                stdout          (off | file | out) "off"
+                stderr          (off | file | out) "off" >
+
+        <!ELEMENT component_defaults (instances,retry_max,retry_window,run_type) >
+            <!ELEMENT instances (#PCDATA) >
+            <!ELEMENT retry_max (#PCDATA) >
+            <!ELEMENT retry_window (#PCDATA) >
+            <!ELEMENT run_type (#PCDATA) >

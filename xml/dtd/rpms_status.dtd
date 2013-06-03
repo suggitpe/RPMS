@@ -1,0 +1,33 @@
+<!-- DTD for DOCTYPE rpms_status -->
+<!ELEMENT rpms_status (daemon_status+, system_status?) >
+    <!-- Daemon status -->
+    <!ELEMENT daemon_status (component_status*) >
+    <!ATTLIST daemon_status
+        directorhost    (1 | 0) #REQUIRED
+        hostname        CDATA   #REQUIRED
+        registered      (1 | 0) #REQUIRED
+        running         (1 | 0) #REQUIRED >
+
+        <!ELEMENT component_status (#PCDATA) >
+        <!ATTLIST component_status
+            compname    CDATA   #REQUIRED
+            sysinstance CDATA   #REQUIRED
+            running     (1 | 0) #REQUIRED
+            starttime   CDATA   #REQUIRED
+            runnable    (1 | 0) #REQUIRED 
+            maxretries  CDATA   #REQUIRED 
+            moveable    (1 | 0) #REQUIRED 
+            runtype     CDATA   #REQUIRED 
+            pid         CDATA   #REQUIRED 
+            rss         CDATA   #REQUIRED 
+            rssavg      CDATA   #REQUIRED 
+            cpu         CDATA   #REQUIRED 
+            cpuavg      CDATA   #REQUIRED 
+            logname     CDATA   #REQUIRED >
+
+    <!-- System status -->
+    <!ELEMENT system_status (#PCDATA) >
+    <!ATTLIST system_status
+        date            CDATA   #REQUIRED
+        instanceid      CDATA   #REQUIRED
+        systemname      CDATA   #REQUIRED >

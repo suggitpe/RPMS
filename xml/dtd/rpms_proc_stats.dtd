@@ -1,0 +1,11 @@
+<!-- DTD for DOCTYPE rpms_status -->
+<!ELEMENT rpms_proc_stats (daemon_proc_stats+ ) >
+    <!ELEMENT daemon_proc_stats (proc_stat*) >
+    <!ATTLIST daemon_proc_stats
+        hostname CDATA   #REQUIRED >
+        <!ELEMENT proc_stat (#PCDATA) >
+        <!ATTLIST proc_stat
+            compname    CDATA   #REQUIRED
+            cpuavg      CDATA   #REQUIRED
+            maxrss      CDATA   #REQUIRED
+            sysinstance CDATA   #REQUIRED >
