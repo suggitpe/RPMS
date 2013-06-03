@@ -1,0 +1,46 @@
+SHELL=/bin/sh
+MASTER_BASE=/home/suggitpe/codebase/RPMS/trunk
+# external libraries
+EXTLIB_INCL=/usr/local/include/
+EXTLIB_LIB=/usr/local/lib
+
+MASTER_BLD=build
+
+# compiler/linker flags
+MASTER_CC=/usr/bin/gcc
+MASTER_FLAGS=-fPIC -DGCC -g -D_DEBUG -Wreturn-type -Wno-ctor-dtor-privacy -pthread -Wconversion -Wcast-qual -Winline -Woverloaded-virtual
+#-Wunreachable-code
+MASTER_LIB_FLAGS=-shared
+
+# idl compiler
+IDL=/usr/local/bin/idl
+IDL_DST=$(MASTER_BLD)/
+IDL_FLAGS=--poa --no-boa
+
+# directories
+LIB_SRC=src/libs
+LIB_BLD=$(MASTER_BLD)/libs
+LIB_DST=$(MASTER_BLD)/install/lib
+
+APP_SRC=src/apps
+APP_BLD=$(MASTER_BLD)/apps
+APP_DST=$(MASTER_BLD)/install/bin
+EX_APP_BASE=test/testapps
+
+DOC_DST=$(MASTER_BLD)/install/doc
+
+WEB_BASE=/data1/webserver/externalContent/RPMS
+
+# internal libraries
+include $(MASTER_BASE)/$(MASTER_BLD)/_makefile.libs
+
+# for the makefiles
+MASTER_INCL_PATH=-I$(MASTER_BASE)/include -I$(MASTER_BASE)/$(LIB_SRC) -I$(EXTLIB_INCL)
+MASTER_LIB_PATH=-L$(MASTER_BASE)/$(LIB_DST) -L$(EXTLIB_LIB) -L/usr/lib
+MASTER_LIB_FILES=$(EXTERNAL_LIBS) $(CORE_LIBS)
+
+# Doxygen settings
+DOX_EXE=/usr/local/bin/doxygen
+DOX_CFG=$(MASTER_BASE)/$(MASTER_BLD)/_doxygen.dox
+
+

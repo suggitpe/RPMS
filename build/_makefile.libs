@@ -1,0 +1,28 @@
+CORE_LIBS=\
+    -lbase \
+    -lcorbaimpl \
+    -lelection \
+    -lidllib \
+    -llogging \
+    -lsockets \
+    -ltools \
+    -lutilities \
+    -lxmlutil
+
+CLIENT_LIBS=\
+    -lclientlib
+
+DAEMON_LIBS=\
+    -ldaemonlib \
+    -ldistributor \
+    -ldirectorlib \
+    -lstreamreader
+
+EXTERNAL_LIBS=\
+    -ldl\
+    -llog4cplus\
+    -lmico2.3.11\
+    -lxerces-c \
+    -lxalan-c \
+    -lpthread
+
