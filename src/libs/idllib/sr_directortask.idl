@@ -1,0 +1,12 @@
+interface SR_DirectorTask
+{
+    boolean clientStart();
+    boolean clientStop();
+    boolean clientReconfigure( in string aForce );
+    boolean clientRestartFailedApp( in string aAppName );
+    boolean clientRestartApp( in string aAppName );
+    string  clientGetStatus();
+    void clientStopDirector();
+    boolean registerDaemon( in string aHostName, in unsigned long aInstanceId, in boolean aIsAppRunning );
+    string distGetStats();
+};

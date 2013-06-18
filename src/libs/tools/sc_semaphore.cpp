@@ -1,0 +1,27 @@
+//#############################
+#include "sc_semaphore.hpp"
+
+using rpms::SC_Semaphore;
+
+///////////////////////////////////////////
+SC_Semaphore::SC_Semaphore()
+{
+}
+
+///////////////////////////////////////////
+SC_Semaphore::~SC_Semaphore()
+{
+}
+
+///////////////////////////////////////////
+void SC_Semaphore::lock()
+{
+}
+
+///////////////////////////////////////////
+void SC_Semaphore::unlock()
+{
+}
+
+
+

@@ -1,0 +1,12 @@
+interface Account 
+{
+    void deposit( in unsigned long aAmt );
+    void withdraw( in unsigned long aAmt );
+    long balance();
+};
+
+interface Bank
+{
+    Account create( in string name );
+    void shutdown();
+};

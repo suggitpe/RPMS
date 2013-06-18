@@ -1,0 +1,8 @@
+interface SR_DaemonTask
+{
+    string getDaemonStatus();
+    void registerWithNewDirector( in string aHost );
+    void deRegisterCurrentDirector();
+    boolean changeState( in string aNewState, in string aArg );
+    string getProcessStats();
+};
